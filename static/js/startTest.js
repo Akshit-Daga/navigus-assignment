@@ -190,7 +190,10 @@ function removeAllChildNodes(parent) {
     }
 }
 async function submitTest(){
-    let ans = document.querySelector('input[name="option"]:checked').value;
+    let ans = "0";
+    let ansDiv = document.querySelector('input[name="option"]:checked');
+    if(ansDiv != null)
+    ans = ansDiv.value;
     userResponses[curr] = parseInt(ans);
     let score = 0;
     for(let i=0;i<corrects.length;i++){
