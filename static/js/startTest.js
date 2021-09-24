@@ -98,7 +98,10 @@ function startTest(){
 }
 function previous(){
     if(curr > 0){
-        let ans = document.querySelector('input[name="option"]:checked').value;
+        let ans = "0";
+        let ansDiv = document.querySelector('input[name="option"]:checked');
+        if(ansDiv != null)
+        ans = ansDiv.value;
         userResponses[curr] = parseInt(ans);
         curr--;
         if(userResponses[curr]!=0){
@@ -139,7 +142,10 @@ function previous(){
 }
 function nextQuest(){
     if(curr < questions.length-1){
-        let ans = document.querySelector('input[name="option"]:checked').value;
+        let ans = "0";
+        let ansDiv = document.querySelector('input[name="option"]:checked');
+        if(ansDiv != null)
+        ans = ansDiv.value;
         userResponses[curr] = parseInt(ans);
         curr++;
         if(userResponses[curr]!=0){
